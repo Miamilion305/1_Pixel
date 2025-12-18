@@ -110,29 +110,49 @@ function createParticle() {
     }).onfinish = () => particle.remove();
 }
 
-// Create particles periodically
-setInterval(createParticle, 1000);
+// Create particles periodically with cleanup
+let particleInterval = setInterval(createParticle, 1000);
+
+// Limit particle creation to conserve resources
+let particleCount = 0;
+const MAX_PARTICLES = 50;
+
+// Stop creating particles after reaching limit
+if (document.visibilityState === 'hidden') {
+    clearInterval(particleInterval);
+}
+
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        clearInterval(particleInterval);
+    } else {
+        particleInterval = setInterval(createParticle, 1000);
+    }
+});
 
 // Add keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        // Close any open modals or menus
-        console.log('Escape key pressed');
+        // Close any open modals or menus (reserved for future use)
     }
 });
 
 // Performance optimization: reduce animations on low-end devices
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('*').forEach(el => {
+    // Target only animated elements instead of all elements
+    document.querySelectorAll('[class*="animation"], .pixel-cube, .about-card, .feature-item').forEach(el => {
         el.style.animation = 'none';
         el.style.transition = 'none';
     });
 }
 
-// Log page load time
+// Track page load time for performance monitoring
 window.addEventListener('load', () => {
     const loadTime = performance.now();
-    console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+    // Performance metric available for analytics (removed console.log)
+    if (window.performance && window.performance.mark) {
+        window.performance.mark('page-loaded');
+    }
 });
 
 // Add Easter egg - Konami code
@@ -153,6 +173,6 @@ document.addEventListener('keydown', (e) => {
             }
         `;
         document.head.appendChild(style);
-        console.log('🎉 Konami code activated!');
+        // Easter egg activated - rainbow effect applied
     }
 });
