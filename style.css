@@ -37,13 +37,49 @@ body {
 }
 
 .stars {
-    background: #000 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NkYGD4DwABCQEBfQLPLwAAAABJRU5ErkJggg==') repeat top center;
+    background: #000;
     z-index: -2;
 }
 
+/* Create star effect using radial gradients */
+.stars::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 60px 70px, white, transparent),
+        radial-gradient(1px 1px at 50px 50px, white, transparent),
+        radial-gradient(1px 1px at 130px 80px, white, transparent),
+        radial-gradient(2px 2px at 90px 10px, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.5;
+}
+
 .twinkling {
-    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=') repeat top center;
+    background: transparent;
     z-index: -1;
+}
+
+/* Create twinkling effect with animated stars */
+.twinkling::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(1px 1px at 25px 35px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 75px 85px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 110px 40px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 150px 120px, rgba(255, 255, 255, 0.8), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
     animation: move-twink-back 200s linear infinite;
 }
 

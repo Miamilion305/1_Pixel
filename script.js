@@ -84,6 +84,10 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 
 // Create floating particles effect
 function createParticle() {
+    // Limit total particles
+    if (particleCount >= MAX_PARTICLES) return;
+    
+    particleCount++;
     const particle = document.createElement('div');
     particle.style.position = 'fixed';
     particle.style.width = Math.random() * 3 + 1 + 'px';
@@ -107,7 +111,10 @@ function createParticle() {
     ], {
         duration: duration,
         easing: 'linear'
-    }).onfinish = () => particle.remove();
+    }).onfinish = () => {
+        particle.remove();
+        particleCount--;
+    };
 }
 
 // Create particles periodically with cleanup
