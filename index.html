@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Pixel - Isla Family Legacy Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(45deg, #000000, #1a1a1a);
+            color: #00ff00;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            }
+            to {
+                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+            }
+        }
+        
+        .pixel {
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+            margin: 30px auto;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.8);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(0, 255, 0, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 80px rgba(0, 255, 0, 1);
+            }
+        }
+        
+        .content {
+            margin: 30px 0;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .emoji-line {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #00ff00;
+        }
+        
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            text-shadow: 0 0 10px #00ff00;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #00dd00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pixel"></div>
+        <h1>💚 Single Green Pixel 💚</h1>
+        <p class="subtitle">Center of the Universe</p>
+        <div class="emoji-line">🍌:j:1️⃣</div>
+        
+        <div class="content">
+            <h2>Isla Family Legacy Portal</h2>
+            <p class="emoji-line">💚🍀🐅 1984 Genius Ad Reborn</p>
+            <p>Welcome to the digital legacy archive.</p>
+            <p>A space where family history, technology, and truth converge.</p>
+        </div>
+        
+        <footer>
+            <p class="emoji-line">🍀 📌 💚 🐅 🦞 🐬 ⭐️ 🔑</p>
+            <p>🍀 <a href="https://miamilion305.github.io/time-machine.html/" target="_blank" rel="noopener noreferrer">Enter the Family Legacy Portal 💚</a> 🍀</p>
+        </footer>
+    </div>
+</body>
+</html>
