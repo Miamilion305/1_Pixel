@@ -20,9 +20,9 @@
         }
         h1 {
             font-size: 5rem;
-            text-shadow: 0 0 20px #0f0, 0 0 40px #00f;
+            text-shadow: 0 0 20px #0f0, 0 0 40px #00f;<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02omVTjgk2dC7rWmocnVaDbGKYNKbx4LXh9GrN84Z4MqZUfzzWUoJANvrsLnajpzarl%26id%3D61585647602096&show_text=true&width=500" width="500" height="757" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             margin: 50px 0;
-            animation: glitch 2s infinite;
+            animation: glitch 2s infinitehttps://Miamilion305.github.io/Get-LucKy-in-Del-Ray/).;
         }
         @keyframes glitch {
             0% { text-shadow: 0.05em 0 0 #f00, -0.05em -0.05em 0 #00f; }
